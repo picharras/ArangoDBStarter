@@ -190,7 +190,8 @@ func (s *Service) makeBaseArgs(myHostDir, myContainerDir string, myAddress strin
 		"--javascript.app-path", slasher(filepath.Join(myContainerDir, "apps")),
 		"--log.file", slasher(filepath.Join(myContainerDir, "arangod.log")),
 		"--log.force-direct", "false",
-		"--server.authentication", "false",
+		"--server.authentication", "true",
+		"--server.jwt-secret", "nln0w6rqbr",
 	)
 	switch mode {
 	case "agent":
